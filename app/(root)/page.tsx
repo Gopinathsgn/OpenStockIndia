@@ -1,6 +1,8 @@
 import TradingViewWidget from "@/components/TradingViewWidget";
 import {
+    ETF_HEATMAP_WIDGET_CONFIG,
     HEATMAP_WIDGET_CONFIG,
+    HOTLISTS_WIDGET_CONFIG,
     MARKET_DATA_WIDGET_CONFIG,
     MARKET_OVERVIEW_WIDGET_CONFIG,
     TOP_STORIES_WIDGET_CONFIG
@@ -27,6 +29,24 @@ const Home = () => {
                         title="Stock Heatmap"
                         scriptUrl={`${scriptUrl}stock-heatmap.js`}
                         config={HEATMAP_WIDGET_CONFIG}
+                        height={600}
+                    />
+                </div>
+            </section>
+            <section className="grid w-full gap-8 home-section">
+                <div className="md:col-span-1 xl:col-span-1">
+                    <TradingViewWidget
+                        title="Stock Market Gainers/Losers"
+                        scriptUrl={`${scriptUrl}hotlists.js`}
+                        config={HOTLISTS_WIDGET_CONFIG}
+                        height={600}
+                    />
+                </div>
+                <div className="md-col-span xl:col-span-2">
+                    <TradingViewWidget
+                        title="ETF Heatmap"
+                        scriptUrl={`${scriptUrl}etf-heatmap.js`}
+                        config={ETF_HEATMAP_WIDGET_CONFIG}
                         height={600}
                     />
                 </div>
