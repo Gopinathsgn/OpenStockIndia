@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react"
 import { CommandDialog, CommandEmpty, CommandInput, CommandList } from "@/components/ui/command"
 import {Button} from "@/components/ui/button";
-import {Loader2,  TrendingUp} from "lucide-react";
+import {Loader2,  TrendingUp, ArrowRight} from "lucide-react";
 import Link from "next/link";
 import {searchStocks} from "@/lib/actions/stock.actions";
 import {useDebounce} from "@/hooks/useDebounce";
+import {normalizeToAlphaVantageFormat, extractSymbol} from "@/lib/utils/symbolTransform";
 
 export default function SearchCommand({ renderAs = 'button', label = 'Add stock', initialStocks }: SearchCommandProps) {
     const [open, setOpen] = useState(false)
@@ -34,9 +35,42 @@ export default function SearchCommand({ renderAs = 'button', label = 'Add stock'
         setLoading(true)
         try {
             const results = await searchStocks(searchTerm.trim());
-            setStocks(results);
+
+            // If no results from API, add manual entry fallback
+            if (results.length === 0 && searchTerm.trim()) {
+                const normalizedSymbol = normalizeToAlphaVantageFormat(searchTerm.trim());
+                if (normalizedSymbol) {
+                    const manualEntry: StockWithWatchlistStatus = {
+                        symbol: normalizedSymbol,
+                        name: `Navigate to ${extractSymbol(normalizedSymbol)}`,
+                        exchange: 'BSE',
+                        type: 'Direct Search',
+                        isInWatchlist: false,
+                        isManualEntry: true
+                    };
+                    setStocks([manualEntry]);
+                } else {
+                    setStocks([]);
+                }
+            } else {
+                setStocks(results);
+            }
         } catch {
-            setStocks([])
+            // On API error, provide manual entry fallback
+            const normalizedSymbol = normalizeToAlphaVantageFormat(searchTerm.trim());
+            if (normalizedSymbol) {
+                const manualEntry: StockWithWatchlistStatus = {
+                    symbol: normalizedSymbol,
+                    name: `Navigate to ${extractSymbol(normalizedSymbol)}`,
+                    exchange: 'BSE',
+                    type: 'Direct Search',
+                    isInWatchlist: false,
+                    isManualEntry: true
+                };
+                setStocks([manualEntry]);
+            } else {
+                setStocks([]);
+            }
         } finally {
             setLoading(false)
         }
@@ -92,12 +126,19 @@ export default function SearchCommand({ renderAs = 'button', label = 'Add stock'
                                     <Link
                                         href={`/stocks/${stock.symbol}`}
                                         onClick={handleSelectStock}
-                                        className="search-item-link"
+                                        className={`search-item-link ${stock.isManualEntry ? 'border-l-2 border-blue-500 bg-blue-50/5' : ''}`}
                                     >
-                                        <TrendingUp className="h-4 w-4 text-gray-500" />
+                                        {stock.isManualEntry ? (
+                                            <ArrowRight className="h-4 w-4 text-blue-500" />
+                                        ) : (
+                                            <TrendingUp className="h-4 w-4 text-gray-500" />
+                                        )}
                                         <div  className="flex-1">
                                             <div className="search-item-name">
                                                 {stock.name}
+                                                {stock.isManualEntry && (
+                                                    <span className="ml-2 text-xs text-blue-500 font-normal">(Direct navigation)</span>
+                                                )}
                                             </div>
                                             <div className="text-sm text-gray-500">
                                                 {stock.symbol} | {stock.exchange } | {stock.type}
