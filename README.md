@@ -1,12 +1,14 @@
 <div align="center">
-  Checkout new amazing projects also, <a href="github.com/open-dev-society/openreadme" target="_blank">OpenReadme </a> is live
-</div>  
-<div align="center">
   <br />
   <a href="#" target="_blank">
-    <img src="./public/assets/images/dashboard.png" alt="Project Banner" />
+    <img src="./public/assets/images/dashboard_india.png" alt="OpenStockIndia Banner" />
   </a>
-  © Open Dev Society. This project is licensed under AGPL-3.0; if you modify, redistribute, or deploy it (including as a web service), you must release your source code under the same license and credit the original authors.
+
+  ### 🇮🇳 Indian Stock Market Edition
+
+  > **Fork Notice:** This is OpenStockIndia, a specialized fork of [OpenStock](https://github.com/Open-Dev-Society/OpenStock) by Open Dev Society, optimized specifically for the Indian stock market (BSE). This fork is maintained separately as a permanent India-focused variant (mostly for my personal use).
+
+  © Open Dev Society (Original Project). This fork is licensed under AGPL-3.0; if you modify, redistribute, or deploy it (including as a web service), you must release your source code under the same license and credit the original authors.
   <br />
   <br/>
 
@@ -21,16 +23,54 @@
     <img src="https://img.shields.io/badge/-Inngest-black?style=for-the-badge&logoColor=white&logo=inngest&color=000000"/>
     <img src="https://img.shields.io/badge/-Nodemailer-black?style=for-the-badge&logoColor=white&logo=gmail&color=EA4335"/>
     <img src="https://img.shields.io/badge/-TradingView-black?style=for-the-badge&logoColor=white&logo=tradingview&color=2962FF"/>
+    <img src="https://img.shields.io/badge/-Alpha%20Vantage-black?style=for-the-badge&logoColor=white&color=0052CC"/>
     <img src="https://img.shields.io/badge/-Finnhub-black?style=for-the-badge&logoColor=white&color=30B27A"/>
     <img src="https://img.shields.io/badge/-CodeRabbit-black?style=for-the-badge&logoColor=white&logo=coderabbit&color=9146FF"/>
   </div>
 </div>
 
-# OpenStock
+# OpenStock - India Edition
 
-OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.
+OpenStockIndia is an open-source stock market tracking platform specifically built for Indian investors. Track BSE stocks in real-time, explore detailed company insights, set personalized alerts, and access Indian market data — built openly, for everyone, forever free.
 
-Note: OpenStock is community-built and not a brokerage. Market data may be delayed based on provider rules and your configuration. Nothing here is financial advice.
+Note: OpenStockIndia is community-built and not a brokerage. Market data may be delayed based on provider rules and your configuration. Nothing here is financial advice.
+
+## 🇮🇳 What's Different in India Edition
+
+This fork is specifically optimized for the Indian stock market with the following enhancements:
+
+### Key Features for Indian Investors
+- **BSE Stock Integration**: Full support for Bombay Stock Exchange (BSE) stocks via TradingView Widgets and Alpha Vantage API 
+- **Indian Stock Screener**: Advanced screening tools tailored for Indian equities 
+- **Popular BSE Stocks**: Quick access to top Indian stocks (Reliance, TCS, HDFC Bank, Infosys, and more)
+- **ETF Heatmap**: Visualize Indian ETF performance at a glance
+- **Localized Experience**: Symbol formats, charts, and widgets configured for Indian markets
+
+### Screenshots
+
+<div align="center">
+
+#### Dashboard with Indian (BSE) Stocks
+<img src="./public/assets/images/dashboard_india.png" alt="Indian Stock Dashboard" width="800"/>
+
+#### Indian ETF Heatmap
+<img src="./public/assets/images/ETF_Heatmap.png" alt="Indian ETF Heatmap" width="800"/>
+
+#### Indian Stock Screener
+<img src="./public/assets/images/screener_india.png" alt="Indian Stock Screener" width="800"/>
+
+#### Indian Stock Search
+<img src="./public/assets/images/search_india.png" alt="Stock Search" width="800"/>
+
+#### Indian Stock Details
+<img src="./public/assets/images/stock_details_india.png" alt="Stock Details" width="800"/>
+
+</div>
+
+### Maintenance
+This is a **permanent separate fork** maintained independently from the original OpenStock project. While we respect and credit the original Open Dev Society project, OpenStockIndia will continue to evolve specifically for Indian market needs.
+
+**Original Project**: [OpenStock by Open Dev Society](https://github.com/Open-Dev-Society/OpenStock)
 
 ## 📋 Table of Contents
 
@@ -51,7 +91,7 @@ Note: OpenStock is community-built and not a brokerage. Market data may be delay
 
 ## ✨ Introduction
 
-OpenStock is a modern stock market app powered by Next.js (App Router), shadcn/ui and Tailwind CSS, Better Auth for authentication, MongoDB for persistence, Finnhub for market data, and TradingView widgets for charts and market views.
+OpenStockIndia is a modern stock market platform specifically designed for Indian investors, powered by Next.js (App Router), shadcn/ui and Tailwind CSS, Better Auth for authentication, MongoDB for persistence, TradingView widgets for charts and market views, Alpha Vantage for comprehensive BSE stock search and data, Finnhub for market news. This India Edition focuses exclusively on the Bombay Stock Exchange (BSE) with localized features, popular Indian stocks, screeners, and ETF tracking tailored for the Indian market.
 
 ## 🌍 Open Dev Society Manifesto <a name="manifesto"></a>
 
@@ -82,8 +122,9 @@ Core
 Auth & Data
 - Better Auth (email/password) with MongoDB adapter
 - MongoDB + Mongoose
-- Finnhub API for symbols, profiles, and market news
 - TradingView embeddable widgets
+- Alpha Vantage API for Indian BSE stock search
+- Finnhub API for market news
 
 Automation & Comms
 - Inngest (events, cron, AI inference via Gemini)
@@ -95,12 +136,30 @@ Language composition
 
 ## 🔋 Features
 
+### 🇮🇳 India-Specific Features
+- **BSE Stock Integration**
+    - Comprehensive Bombay Stock Exchange (BSE) stock coverage via TradingView embeddable widgets and Alpha Vantage API for search
+    - Symbol format optimized for Indian markets (SYMBOL.BSE)
+- **Indian Stock Screener**
+    - Screening tools tailored for Indian equities
+    - Filter and discover BSE stocks based on custom criteria
+- **Popular Indian Stocks**
+    - Quick access to top BSE stocks (Reliance, TCS, HDFC Bank, Infosys, ICICI Bank, and more)
+    - Static data for popular stocks to conserve Alpha Vantage API quota
+- **Indian ETF Heatmap**
+    - Visual representation of Indian ETF performance
+    - Real-time heatmap for quick market insights
+- **Localized Experience**
+    - Symbol formats, charts, and TradingView widgets configured for BSE
+
+### Core Features
 - Authentication
     - Email/password auth with Better Auth + MongoDB adapter
     - Protected routes enforced via Next.js middleware
-- Global search and Command + K palette
-    - Fast stock search backed by Finnhub
-    - Popular stocks when idle; debounced querying
+    - Global Search & Command Palette
+    - Fast BSE stock search backed by Alpha Vantage
+    - Debounced search queries with 30-minute caching
+    - Cmd/Ctrl + K keyboard shortcut for quick access
 - Watchlist
     - Per-user watchlist stored in MongoDB (unique symbol per user)
 - Stock details
@@ -124,7 +183,8 @@ Language composition
 Prerequisites
 - Node.js 20+ and pnpm or npm
 - MongoDB connection string (MongoDB Atlas or local via Docker Compose)
-- Finnhub API key (free tier supported; real-time may require paid)
+- Alpha Vantage API key (for Indian BSE stock search - free tier: 25 calls/day, Premium may required for more search suggestions)
+- Finnhub API key (optional, for news only - free tier supported)
 - Gmail account for email (or update Nodemailer transport)
 - Optional: Google Gemini API key (for AI-generated welcome intros)
 
@@ -240,7 +300,11 @@ MONGODB_URI=mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majori
 BETTER_AUTH_SECRET=your_better_auth_secret
 BETTER_AUTH_URL=http://localhost:3000
 
-# Finnhub
+# Alpha Vantage (for Indian BSE stock search)
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
+ALPHA_VANTAGE_BASE_URL=https://www.alphavantage.co/query
+
+# Finnhub (for news only)
 FINNHUB_API_KEY=your_finnhub_key
 # Optional client-exposed variant if needed by client code:
 NEXT_PUBLIC_FINNHUB_API_KEY=
@@ -266,7 +330,11 @@ MONGODB_URI=mongodb://root:example@mongodb:27017/openstock?authSource=admin
 BETTER_AUTH_SECRET=your_better_auth_secret
 BETTER_AUTH_URL=http://localhost:3000
 
-# Finnhub
+# Alpha Vantage (for Indian BSE stock search)
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
+ALPHA_VANTAGE_BASE_URL=https://www.alphavantage.co/query
+
+# Finnhub (for news only)
 FINNHUB_API_KEY=your_finnhub_key
 NEXT_PUBLIC_FINNHUB_API_KEY=
 FINNHUB_BASE_URL=https://finnhub.io/api/v1
@@ -386,22 +454,31 @@ OpenStock is and will remain free and open for everyone. This project is license
 
 ## 🙏 Acknowledgements
 
-- Finnhub for accessible market data
-- TradingView for embeddable market widgets
+### OpenStockIndia Fork Acknowledgements
+- **[Open Dev Society](https://github.com/Open-Dev-Society)** - For creating the original OpenStock project that serves as the foundation for this India Edition
+- **[OpenStock Original Project](https://github.com/Open-Dev-Society/OpenStock)** - The upstream open-source stock market tracking platform
+
+### Technology & Service Acknowledgements
+- TradingView for embeddable market widgets configured for Indian markets
+- Alpha Vantage for providing comprehensive BSE stock data API that powers serarch
+- Finnhub for accessible market data and news
 - shadcn/ui, Radix UI, Tailwind CSS, Next.js community
 - Inngest for dependable background jobs and workflows
 - Better Auth for simple and secure authentication
 - All contributors who make open tools possible
 
-— Built openly, for everyone, forever free. Open Dev Society.
+— Built openly, for Indian investors, forever free.
 
-> © Open Dev Society. This project is licensed under AGPL-3.0; if you modify, redistribute, or deploy it (including as a web service), you must release your source code under the same license and credit the original authors.
+> **Fork License Notice:** This is a fork of OpenStock by Open Dev Society. Both the original project and this fork are licensed under AGPL-3.0. If you modify, redistribute, or deploy this software (including as a web service), you must release your source code under the same license and credit both the original OpenStock authors (Open Dev Society) and OpenStockIndia contributors.
 
 ## Our Honourable Contributors
 - [ravixalgorithm](https://github.com/ravixalgorithm) - Developed the entire application from the ground up, including authentication, UI design, API and AI integration, and deployment.
 - [Priyanshuu00007](https://github.com/Priyanshuu00007) - Created the official OpenStock logo and contributed to the project’s visual identity.
 - [chinnsenn](https://github.com/chinnsenn) - Set up Docker configuration for the repository, ensuring a smooth development and deployment process.
 - [koevoet1221](https://github.com/koevoet1221) - Resolved MongoDB Docker build issues, improving the project’s overall stability and reliability.
+
+### OpenStockIndia (India Edition) Contributors
+- [Gopinathsgn](https://github.com/Gopinathsgn) - Created OpenStockIndia fork with comprehensive Indian BSE market support, integrated Alpha Vantage API for BSE stock search, developed Indian stock screener interface, implemented ETF heatmap for Indian ETFs, added popular BSE stocks feature, and configured localized experience for Indian investors.
 
 ## Special thanks
 Huge thanks to [Adrian Hajdin (JavaScript Mastery)](https://github.com/adrianhajdin) — his excellent Stock Market App tutorial was instrumental in building OpenStock for the open-source community under the Open Dev Society.
