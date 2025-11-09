@@ -303,6 +303,71 @@ export const COMPANY_FINANCIALS_WIDGET_CONFIG = (symbol: string) => ({
     largeChartUrl: '',
 });
 
+// Popular BSE stocks with static data to avoid unnecessary API calls
+// For "Popular stocks (10)" feature in search
+export const POPULAR_BSE_STOCKS: PopularStockData[] = [
+    {
+        symbol: 'RELIANCE.BSE',
+        name: 'Reliance Industries Limited',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'TCS.BSE',
+        name: 'Tata Consultancy Services',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'HDFCBANK.BSE',
+        name: 'HDFC Bank',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'INFY.BSE',
+        name: 'Infosys',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'ICICIBANK.BSE',
+        name: 'ICICI Bank',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'SBIN.BSE',
+        name: 'State Bank of India',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'BHARTIARTL.BSE',
+        name: 'Bharti Airtel',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'ITC.BSE',
+        name: 'ITC Limited',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'KOTAKBANK.BSE',
+        name: 'Kotak Mahindra Bank',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+    {
+        symbol: 'LT.BSE',
+        name: 'Larsen & Toubro',
+        exchange: 'BSE',
+        type: 'Equity',
+    },
+];
+
 export const POPULAR_STOCK_SYMBOLS = [
     // Tech Giants (the big technology companies)
     'AAPL',
