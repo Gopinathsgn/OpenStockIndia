@@ -394,14 +394,17 @@ public/assets/images/   # logos and screenshots
 
 ## 📡 Data & Integrations
 
-- Finnhub
-    - Stock search, company profiles, and market news.
-    - Set `FINNHUB_API_KEY` and `FINNHUB_BASE_URL` (default: https://finnhub.io/api/v1).
-    - Free tiers may return delayed quotes; respect rate limits and terms.
-
 - TradingView
     - Embeddable widgets used for charts, heatmap, quotes, and timelines.
     - External images from `i.ibb.co` are allowlisted in `next.config.ts`.
+- Alpha Vantage 
+    - Stock search, company profiles
+    - Set `ALPHA_VANTAGE_API_KEY` and `ALPHA_VANTAGE_BASE_URL` (default: https://www.alphavantage.co/query).
+    - Free tiers may return delayed quotes (free tier: 25 calls/day); respect rate limits and terms.
+- Finnhub
+    - Market news.
+    - Set `FINNHUB_API_KEY` and `FINNHUB_BASE_URL` (default: https://finnhub.io/api/v1).
+    - Free tiers may return delayed quotes; respect rate limits and terms.
 
 - Better Auth + MongoDB
     - Email/password with MongoDB adapter.
